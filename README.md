@@ -100,7 +100,7 @@ Per company policy, any device isolated by the "No AI detection" rule requires a
 cmd.exe /c powershell.exe -ExecutionPolicy Bypass -NoProfile -Command "Invoke-WebRequest -Uri 'https://sacyberrange00.blob.core.windows.net/vm-applications/7z2408-x64.exe' -OutFile C:\ProgramData\7z2408-x64.exe; Start-Process 'C:\programdata\7z2408-x64.exe' -ArgumentList '/S' -Wait"
 ```
 
-This command runs a PowerShell script through the command line (cmd.exe). It can be broken down into the following steps:
+This activity could indicate an attempt to install software from an external source, which should be investigated further. This command runs a PowerShell script through the command line (cmd.exe). It can be broken down into the following steps:
 
 1. **Invoke-WebRequest**:  
    - Downloads a file from the URL `https://sacyberrange00.blob.core.windows.net/vm-applications/7z2408-x64.exe` and saves it as `7z2408-x64.exe` in the `C:\ProgramData` directory.
@@ -116,8 +116,11 @@ This command runs a PowerShell script through the command line (cmd.exe). It can
 - The installer runs silently with the `/S` argument, meaning no user input is required during installation.
 - The command executes the file immediately after downloading.
 
----
+------
+## 🧠 Conclusion
+This project demonstrated how to simulate and investigate a security incident using **Microsoft Defender for Endpoint** and **Kusto Query Language (KQL)**. By isolating a compromised VM and analyzing logs, we identified that a user bypassed corporate restrictions to install a blocked application via the Microsoft Store. 
 
-This activity could indicate an attempt to install software from an external source, which should be investigated further to ensure it aligns with company security policies and guidelines.
+The findings highlight the importance of effective **EDR** solutions and forensic analysis in detecting and responding to security incidents. To improve our protections moving forward, we should consider enhancing our alerting mechanisms, adjusting security settings, and potentially disabling the Microsoft Store to prevent unauthorized installations in the future.
+
 
 
