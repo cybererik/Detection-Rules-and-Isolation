@@ -40,14 +40,27 @@ DeviceProcessEvents
 | order by Timestamp desc
 ```
 
+
+
 ------
 ### Step 3: Forensic Investigation 
 
 Per company policy, any device isolated by the "No AI detection" rule requires a forensic investigation to determine whether the activity was accidental or the result of potential insider threats.
 
+![DOWNLOADED CHATGBT Screenshot 2025-04-16 231027](https://github.com/user-attachments/assets/9c3fea51-b96b-49e8-a271-7fe26efe4a02)
 
+**KQL Script** - [Click to View](https://gist.github.com/cybererik/06952c7132cf3ccbce68c1dda8a93c11)
 
+**📄 What This KQL Query Does (in simple terms)**
 
+This KQL query looks for **.exe files** that were either created or written on devices whose name starts with **"remote-agent-er"** (the VM in question). It pulls data from the **DeviceFileEvents** table in Microsoft Defender for Endpoint.
 
+The query shows:
+- **When the file activity happened** (Timestamp)
+- **Which device it happened on** (DeviceName)
+- **The file's name and location** (FileName, FolderPath)
+- **What process created or wrote the file** (InitiatingProcessFileName, InitiatingProcessCommandLine)
+- **The ReportId to trace the event in the system**
 
-
+-----
+### Step 4: Additional findings
