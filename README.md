@@ -18,14 +18,7 @@ This project simulates a real-world corporate incident where a user triggers an 
 4) **Identify the root cause of the alert and track user activity through log data.**
 
 -----
-## Project Overview
-
-### Step 1: Provisioning the Virtual Machine (The target VM)
-1. Create a new Virtual Machine (VM) on **Microsoft Azure** with Windows 10 Pro as the OS.
-2. Onboarding the VM to Microsoft Defender for Endpoint
-
-------
-### Step 2: Creating the Detection Rule
+### Step 1: Creating the Detection Rule
 
 ![Screenshot 2025-04-16 234248](https://github.com/user-attachments/assets/cbb7334e-cff9-4842-9915-26e404989af5)
 
@@ -42,7 +35,7 @@ DeviceProcessEvents
 
 
 ------
-### Step 3: Verifying Isolation
+### Step 2: Verifying Isolation
 
 ![Screenshot 2025-04-16 234934](https://github.com/user-attachments/assets/c5ef4e02-8501-4409-9c07-1009f77edf5d)
 
@@ -56,7 +49,7 @@ The investigation uncovered two separate process executions, confirming that the
 
 ------
 
-### Step 4: Forensic Investigation 
+### Step 3: Forensic Investigation 
 
 ![DOWNLOADED CHATGBT Screenshot 2025-04-16 231027](https://github.com/user-attachments/assets/9c3fea51-b96b-49e8-a271-7fe26efe4a02)
 
