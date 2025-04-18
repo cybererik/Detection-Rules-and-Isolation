@@ -1,6 +1,6 @@
 # Incident-Analysis-and-Isolation
 
-<img width="1000" alt="image" src="https://github.com/user-attachments/assets/6fe61771-0dce-4799-b454-fe98459e82ff">
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/6fe61771-0dce-4799-b454-fe98459e82ff">
 
 ## Overview
 This project simulates a real-world corporate incident where a user triggers an EDR rule in Microsoft Defender for Endpoint. The rule detects suspicious behavior and automatically isolates the affected VM. We provisioned the VM in Microsoft Azure, onboarded it to Defender, and used KQL to query logs for forensic analysis. The goal was to investigate what caused the alert and determine if the user's actions were malicious by further analyzing their activity through logs.
