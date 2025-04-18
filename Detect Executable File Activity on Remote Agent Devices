@@ -1,0 +1,34 @@
+# **Detect Executable File Activity on Remote Agent Devices**
+
+**NOTES**  
+**Author:** Erik Vargas  
+**Date Created:** 04/18/2025  
+**Version:** 1.0  
+
+---
+
+### **KQL Query**
+
+```kql
+DeviceFileEvents
+| where DeviceName startswith "remote-agent-er"
+| where FileName endswith ".exe"
+| where ActionType in~ ("FileCreated", "FileWritten")
+| project Timestamp, DeviceName, FileName, FolderPath, InitiatingProcessFileName, InitiatingProcessCommandLine, ReportId
+| order by Timestamp desc
+
+------
+
+### **📄 What This KQL Query Does (in simple terms)**
+
+This KQL query looks for **.exe files** that were either created or written on devices whose name starts with **"remote-agent-er"** (the VM in question). It pulls data from the **DeviceFileEvents** table in Microsoft Defender for Endpoint.
+
+The query shows:
+- **When the file activity happened** (Timestamp)
+- **Which device it happened on** (DeviceName)
+- **The file's name and location** (FileName, FolderPath)
+- **What process created or wrote the file** (InitiatingProcessFileName, InitiatingProcessCommandLine)
+- **The ReportId to trace the event in the system**
+
+
+
