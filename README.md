@@ -55,24 +55,45 @@ The investigation uncovered two separate process executions, confirming that the
 - **Second Activity: April 16 at 11:34 PM**
 
 ------
+
 ### Step 4: Forensic Investigation 
 
 Per company policy, any device isolated by the "No AI detection" rule requires a forensic investigation to determine whether the activity was accidental or the result of potential insider threats.
 
 ![DOWNLOADED CHATGBT Screenshot 2025-04-16 231027](https://github.com/user-attachments/assets/9c3fea51-b96b-49e8-a271-7fe26efe4a02)
 
+During the investigation, we saw that **ChatGPT.exe** was installed on the VM. The forensic logs revealed it was installed using a process called:
+
+```kql
+svchost.exe -k wsappx -p
+```
+
+---
+
+### 📌 What does this mean?
+
+- `svchost.exe` is a legitimate Windows system process used to run services.
+- `wsappx` is a Windows service that handles **Microsoft Store installations and updates.**
+
+The presence of `ChatGPT.exe` and the process details suggest that the **ChatGPT desktop app was installed directly through the Microsoft Store**, not from a browser or a manual download.
+
+---
+
+### 🧪 Supporting Evidence:
+
+- Files were written to the **Microsoft.WindowsStore** directory.
+- Initiating process was `svchost.exe` under the `wsappx` group.
+- This matches how Microsoft Store apps are usually installed in the background by system processes.
+
+---
+
+### 🛑 Why This Matters:
+
+Although the process looks legitimate, the app itself (ChatGPT) is blocked in this simulated environment due to company policy. The user found a workaround by installing it via the Microsoft Store, bypassing normal security restrictions.
+
+
+
 **KQL Script** - [Click to View](https://gist.github.com/cybererik/06952c7132cf3ccbce68c1dda8a93c11)
-
-**📄 What This KQL Query Does (in simple terms)**
-
-This KQL query looks for **.exe files** that were either created or written on devices whose name starts with **"remote-agent-er"** (the VM in question). It pulls data from the **DeviceFileEvents** table in Microsoft Defender for Endpoint.
-
-The query shows:
-- **When the file activity happened** (Timestamp)
-- **Which device it happened on** (DeviceName)
-- **The file's name and location** (FileName, FolderPath)
-- **What process created or wrote the file** (InitiatingProcessFileName, InitiatingProcessCommandLine)
-- **The ReportId to trace the event in the system**
 
 -----
 ### Step 4: Additional findings
