@@ -46,9 +46,9 @@ DeviceProcessEvents
 
 ![Screenshot 2025-04-16 234934](https://github.com/user-attachments/assets/c5ef4e02-8501-4409-9c07-1009f77edf5d)
 
-As shown in the screenshot, the device remote-agent-er was automatically isolated based on the custom detection rule.
+As shown in the screenshot, the device **remote-agent-er** was automatically isolated based on the custom detection rule.
 
-The investigation uncovered two separate process executions, confirming that the AI generative tool ChatGPT was installed and launched twice on the machine. The activity was tied to the user account fdvkml345212, allowing us to attribute the actions to a specific individual.
+The investigation uncovered two separate process executions, confirming that the AI generative tool ChatGPT was installed and launched twice on the machine. The activity was tied to the user account **fdvkml345212**, allowing us to attribute the actions to a specific individual.
 
 ## 📅 Timeline of Events:
 - **First Activity: April 16 at 10:14 PM**
@@ -76,3 +76,6 @@ The query shows:
 
 -----
 ### Step 4: Additional findings
+
+
+
