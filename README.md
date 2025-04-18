@@ -1,4 +1,4 @@
-# Forensics-Investigation-and-Isolation
+# Incident-Investigation-and-Isolation
 
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/403abdde-34d1-4396-beb6-e62b773d6e89">
 
