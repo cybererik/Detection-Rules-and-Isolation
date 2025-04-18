@@ -58,9 +58,9 @@ The investigation uncovered two separate process executions, confirming that the
 
 ### Step 4: Forensic Investigation 
 
-Per company policy, any device isolated by the "No AI detection" rule requires a forensic investigation to determine whether the activity was accidental or the result of potential insider threats.
-
 ![DOWNLOADED CHATGBT Screenshot 2025-04-16 231027](https://github.com/user-attachments/assets/9c3fea51-b96b-49e8-a271-7fe26efe4a02)
+
+**KQL Script Explanation** - [Click to View](https://github.com/cybererik/Forensics-Investigation-and-Isolation/blob/main/Detect%20Executable%20File%20Activity%20on%20Remote%20Agent%20Devices)
 
 During the investigation, we saw that **ChatGPT.exe** was installed on the VM. The forensic logs revealed it was installed using a process called:
 
@@ -68,7 +68,6 @@ During the investigation, we saw that **ChatGPT.exe** was installed on the VM. T
 svchost.exe -k wsappx -p
 ```
 
----
 
 ### 📌 What does this mean?
 
@@ -77,7 +76,6 @@ svchost.exe -k wsappx -p
 
 The presence of `ChatGPT.exe` and the process details suggest that the **ChatGPT desktop app was installed directly through the Microsoft Store**, not from a browser or a manual download.
 
----
 
 ### 🧪 Supporting Evidence:
 
@@ -85,18 +83,15 @@ The presence of `ChatGPT.exe` and the process details suggest that the **ChatGPT
 - Initiating process was `svchost.exe` under the `wsappx` group.
 - This matches how Microsoft Store apps are usually installed in the background by system processes.
 
----
-
-### 🛑 Why This Matters:
+### Why This Matters:
 
 Although the process looks legitimate, the app itself (ChatGPT) is blocked in this simulated environment due to company policy. The user found a workaround by installing it via the Microsoft Store, bypassing normal security restrictions.
 
-
-
-**KQL Script** - [Click to View](https://gist.github.com/cybererik/06952c7132cf3ccbce68c1dda8a93c11)
-
 -----
 ### Step 4: Additional findings
+Per company policy, any device isolated by the "No AI detection" rule requires a forensic investigation to determine whether the activity was accidental or the result of potential insider threats.
 
+
+![Screenshot 2025-04-16 231558](https://github.com/user-attachments/assets/c9063411-2d64-4db7-8ea2-ad7731cf5c38)
 
 
