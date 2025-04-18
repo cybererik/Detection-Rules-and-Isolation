@@ -1,6 +1,6 @@
 # Forensics-Investigation-and-Isolation
 
-<img width="1000" alt="image" src="https://github.com/user-attachments/assets/2576df82-85e0-4638-8c4d-ef5fd1391e2c">
+<img width="1000" alt="image" src="https://github.com/user-attachments/assets/403abdde-34d1-4396-beb6-e62b773d6e89">
 
 ## Overview
 This project simulates a real-world corporate incident where a user triggers an EDR rule in Microsoft Defender for Endpoint. The rule detects suspicious behavior and automatically isolates the affected VM. We provisioned the VM in Microsoft Azure, onboarded it to Defender, and used KQL to query logs for forensic analysis. The goal was to investigate what caused the alert and determine if the user's actions were malicious by further analyzing their activity through logs.
@@ -41,9 +41,21 @@ DeviceProcessEvents
 ```
 
 
+------
+### Step 3: Verifying Isolation
+
+![Screenshot 2025-04-16 234934](https://github.com/user-attachments/assets/c5ef4e02-8501-4409-9c07-1009f77edf5d)
+
+As shown in the screenshot, the device remote-agent-er was automatically isolated based on the custom detection rule.
+
+The investigation uncovered two separate process executions, confirming that the AI generative tool ChatGPT was installed and launched twice on the machine. The activity was tied to the user account fdvkml345212, allowing us to attribute the actions to a specific individual.
+
+## 📅 Timeline of Events:
+- **First Activity: April 16 at 10:14 PM**
+- **Second Activity: April 16 at 11:34 PM**
 
 ------
-### Step 3: Forensic Investigation 
+### Step 4: Forensic Investigation 
 
 Per company policy, any device isolated by the "No AI detection" rule requires a forensic investigation to determine whether the activity was accidental or the result of potential insider threats.
 
