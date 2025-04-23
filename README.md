@@ -15,7 +15,7 @@ Per company policy, any device isolated by the “No AI Detection” rule must u
 ## Tools & Technologies
 - **Microsoft Azure** (Virtual Machine Provisioning)
 - **Microsoft Defender for Endpoint** (Enterprise EDR)
-- **Kusto Query Language** (Log retrival)
+- **Kusto Query Language** (Log Retrieval)
 
 
 ## Objective(s)
