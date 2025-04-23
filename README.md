@@ -1,7 +1,7 @@
 # Incident-Analysis-and-Isolation
 
 
-<img width="800" alt="image" src="https://github.com/user-attachments/assets/83ba4920-6437-482a-a259-1ccc80849336">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/83ba4920-6437-482a-a259-1ccc80849336">
 
 
 ## Overview
