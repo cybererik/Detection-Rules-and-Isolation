@@ -1,10 +1,16 @@
 # Incident-Analysis-and-Isolation
 
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/6fe61771-0dce-4799-b454-fe98459e82ff">
+![IR_1_img2](https://github.com/user-attachments/assets/603d95b1-ef35-4945-8b9b-3e518e408dc9)
+
 
 ## Overview
-This project simulates a real-world corporate incident where a user triggers an EDR rule in Microsoft Defender for Endpoint. The rule detects suspicious behavior and automatically isolates the affected VM. We provisioned the VM in Microsoft Azure, onboarded it to Defender, and used KQL to query logs for forensic analysis. The goal was to investigate what caused the alert and determine if the user's actions were malicious by further analyzing their activity through logs.
+This project simulates a real-world cybersecurity incident at CyberEV Consulting, where unauthorized software installation triggers an automated EDR (Endpoint Detection and Response) response. Using Microsoft Defender for Endpoint, the affected VM is automatically isolated after detecting a prohibited application. The incident is then investigated using Kusto Query Language (KQL) for forensic analysis to identify the root cause and assess user intent.
 
+Per company policy, any device isolated by the “No AI Detection” rule must undergo a forensic investigation to determine whether the activity was accidental or indicative of an insider threat. This process uncovered additional suspicious behavior, reinforcing the need for strict policy enforcement and continuous monitoring.
+
+> 🏢 Company Scenario |  Company Name: EV Financial Group | Industry: Financial Services
+
+------
 ## Tools & Technologies
 - **Microsoft Azure** (Virtual Machine Provisioning)
 - **Microsoft Defender for Endpoint** (Enterprise EDR)
@@ -14,7 +20,7 @@ This project simulates a real-world corporate incident where a user triggers an 
 ## Objective(s)
 1) **Simulate a security incident involving remote code execution in a corporate environment.**
 2) **Automatically isolate a compromised VM using Microsoft Defender for Endpoint.**
-3) **Use KQL (Kusto Query Language) to retrieve and analyze Azure logs for forensic investigation.**
+3) **Use KQL (Kusto Query Language) to retrieve and analyze Azure logs for forensic analysis.**
 4) **Identify the root cause of the alert and track user activity through log data.**
 
 -----
