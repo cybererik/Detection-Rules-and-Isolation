@@ -1,8 +1,7 @@
-# Incident-Analysis-and-Isolation
+# Detection-Rules-and-Isolation
 
 
-<img width="600" alt="image" src="https://github.com/user-attachments/assets/83ba4920-6437-482a-a259-1ccc80849336">
-
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/e081ba5d-bc11-4bbc-bcd0-29d10b118c00">
 
 ## Overview
 This project simulates a real-world cybersecurity incident at CyberEV Consulting, where unauthorized software installation triggers an automated EDR (Endpoint Detection and Response) response. Using Microsoft Defender for Endpoint, the affected VM is automatically isolated after detecting a prohibited application. The incident is then investigated using Kusto Query Language (KQL) for forensic analysis to identify the root cause and assess user intent.
